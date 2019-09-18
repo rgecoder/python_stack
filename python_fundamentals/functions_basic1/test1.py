@@ -1,13 +1,9 @@
-# this length, that value - function accepts 2 parameters (size,value), take 2 num return list of length size containing only num in value
-# i.e. function(4,7) should return [7,7,7,7]
+#8. reverse list - function takes in array, return array in reversed order. Do without creating empty temporary array
 
-def lengthAndValue(size,value):
-  myarr=[]
-  for i in range (0,size):
-    myarr.append(value)
+def reverse_list(arr):
+  return list(reversed(arr))
 
-  return myarr
+x = [1,2,3,4]
 
-x = lengthAndValue(4,7)
-print(x)
-    
+print(reverse_list(x))
+  
