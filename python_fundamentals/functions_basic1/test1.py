@@ -1,10 +1,13 @@
-def a():
-    print(1)
-    x = b()
-    print(x)
-    return 10
-def b():
-    print(3)
-    return 5
-y = a()
-print(y)
+# this length, that value - function accepts 2 parameters (size,value), take 2 num return list of length size containing only num in value
+# i.e. function(4,7) should return [7,7,7,7]
+
+def lengthAndValue(size,value):
+  myarr=[]
+  for i in range (0,size):
+    myarr.append(value)
+
+  return myarr
+
+x = lengthAndValue(4,7)
+print(x)
+    
