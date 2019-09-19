@@ -19,5 +19,5 @@ class User:
   
   #print name and email of the calling instance
   def show(self):
-    print("My name is {self.name}. You can email at {self.email}.")
+    print(f"My name is {self.name}. You can email at {self.email}.")
     return self

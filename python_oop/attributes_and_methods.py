@@ -5,7 +5,7 @@ class User:
     #set some instane variables, just like any variable we can call these anything
     self.name = name
     self.email = email
-    self.logged = false
+    self.logged = False
 
   #method we create to help user login
   def login(self):
