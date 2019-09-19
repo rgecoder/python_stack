@@ -1,46 +1,32 @@
-#first-class functions
-#entity that support other entities, include being passed as an argument, returned from a function, and assigned to a variable
+#Closures
 
-def square(x):
-  return x * x
-f = square
+def outer_func():
+  message = "Hi"
 
-print(square)
-print(f)
-
-def cube(x):
-  return x * x * x
-
-def my_map(func, arg_list):
-  result = []
-  for i in arg_list:
-    result.append(func(i))
-  return result
-
-squares = my_map(cube, [1,2,3,4,5])
-
-print(squares)
-
-#**************************
-def logger(msg):
-
-  def log_message():
-    print('Log:', msg)
+  def inner_func():
+    print(message) #"free variable" inside inner function
   
-  return log_message
+  return inner_func
 
-log_hi = logger('Hi')
-log_hi()
+my_func = outer_func()
+print(my_func.__name__)
 
-#***************************
-def html_tag(tag):
-  def wrap_text(msg):
-    print('<{0}>{1}</{0}'.format(tag,msg))
-  return wrap_text
+my_func() #this is the inner function
+my_func() # this is a closure: inner function that remembers and has access to variables in the local scope in which it was created, even after outer function finished exec
 
-print_h1 = html_tag('h1')
-print_h1 ('Test Headline!')
-print_h1 ('Another headline!')
+#*************
 
-print_p = html_tag('p')
-print_p ('Test Paragraph!')
+def outer_func2(msg):
+  message = msg
+
+  def inner_func():
+    print(msg)
+  return inner_func
+
+hi_func = outer_func2('Hi')
+hello_func = outer_func2('Hello')
+
+hi_func() # remembers the value of their own message variable
+hello_func() # a closure closes over the free variables in their environment (in this -> message)
+
+
