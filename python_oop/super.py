@@ -27,3 +27,8 @@ class Samurai(Human):
   def sacrifice(self):
     self.health -= 5
 
+
+sam1 = Samurai()
+sam2 = Samurai()
+print(isinstance(sam1,Samurai))
+print(issubclass(Samurai, Human))

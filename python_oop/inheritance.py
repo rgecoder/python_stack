@@ -56,3 +56,5 @@ a = Airplane(22,853,"airbus","A300")
 a.fly(500)
 print(a.mileage)
 
+print(help(Airplane))
+
