@@ -1,3 +1,4 @@
+#Python OOP - classmethods and staticmethods
 class Employee:
 
   num_of_emps = 0
@@ -29,12 +30,26 @@ class Employee:
     cls(first,last,pay) # create a new employee
     return cls(first, last, pay) #so can receive new Employee object when returned
 
+  @staticmethod #Don't access instance or the class
+  def is_workday(day): #dont take in instance or the class as first arg
+    if day.weekday() == 5 or day.weekday() == 6:
+      return False
+    return True
+  
+
 emp_str_1 = 'John-Doe-70000'
 
 # first, last, pay = emp_str_1.split('-')
 # new_emp_1 = Employee(first,last,pay)  
 
 new_emp_1 = Employee.from_string(emp_str_1)
+
+import datetime
+my_date = datetime.date(2019, 9, 20)
+
+print(Employee.is_workday(my_date))
+
+
 
 
 emp_1 = Employee('Corey','Schafer',50000)
