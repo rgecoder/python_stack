@@ -58,3 +58,5 @@ zoo1.addDragon("Draggy")
 zoo1.addDragon("Dragoon")
 zoo1.printAllHealth()
 
+help(Zoo)
+

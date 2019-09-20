@@ -31,3 +31,23 @@ varargs2("one", "two", "three")
 
 
 
+def list(*food):
+  print (food)
+
+list('apples')
+# ('apples',) prints out as tuples
+
+list('apples', 'peaches', 'beef')
+# ('apples', 'peaches', 'beef')
+
+def profile(name, *ages):
+  print (name)
+  print (ages)
+
+profile('Roy', 21,34,'hello', 'age', [1,2,3])
+# Roy
+# (21, 34, 'hello', 'age', [1, 2, 3])
+
+
+
+
