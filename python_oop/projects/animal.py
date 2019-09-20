@@ -20,8 +20,28 @@ cat.walk().run().display_health()
 
 class Dog(Animal):
   def __init__(self,name):
-    super(Dog, self).__init__(name,150)
+    # super(Dog, self).__init__(name,150)
+    super().__init__(name,150)
     
+class Dragon(Animal):
+  def __init__(self,name):
+    super().__init__(name,170)
+
+  def fly(self):
+    self.health -= 10
+
+  def display_health(self):
+    super().display_health()
+    print ("This is a dragon!")
 
 dog = Dog("dog")
 dog.display_health()
+
+drag_1=Dragon("drag_1")
+drag_1.display_health()
+
+
+
+
+
+

@@ -32,7 +32,7 @@ class Developer(Employee):
 
 
 class Manager(Employee):
-    def __init__(self, first, last, pay, employees=None):
+    def __init__(self, first, last, pay, employees=None): # pass in a list
         # pass first,last,pay to our employees init method, let that class handle arguments, DRY
         super().__init__(first, last, pay)
         if employees is None:  # never want to pass mutable datatypes as default arg i.e. list dict
