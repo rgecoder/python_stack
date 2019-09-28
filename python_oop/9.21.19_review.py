@@ -1,21 +1,17 @@
-class User:
-  def __init__(self,name,email):
-    self.name = name
-    self.email = email
-    self.logged = True
-  def login(self):
-    self.logged = True
-    print(self.name + ' is logged in.')
-    return self
-  def logout(self):
-    self.logged = False
-    print(self.name + ' is not logged in')
-    return self
-
-  def show(self):
-    print(f"name is {self.name}, email at {self.email} ")
-    return self
-
+class Node:
+  def __init__(self,value):
+    self.value = value
+    self.next = None
   
-user1 = User('Roy', 'roy@gmail.com')
-user1.show()
+class SList:
+  def __init__(self,value):
+    node = Node(value)
+    self.head = node
+
+  def addNode(self,value):
+    node = Node(value)
+    runner = self.head
+    while (runner.next != None):
+      runner = runner.next
+
+    runner.next = node
