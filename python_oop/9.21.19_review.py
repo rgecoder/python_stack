@@ -15,3 +15,5 @@ class SList:
       runner = runner.next
 
     runner.next = node
+
+    runner.next = node 
