@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Basic Validation Template</title>
+
+  </head>
+  <body>
+    <h1> Enter a valid (Any) Name!</h1>
+    <!-- flask helps with flash messages by giving access to function on client side
+    that allows us to get all flash messages as a list, function is 
+    get_flash_messages() -->
+    
+    {% with message = get_flashed_messages() %}
+    <!-- with messages help declare a variable in tempalte to use within a specific scope -->
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+
+
+    <form action='/process' method = 'POST'>
+    Name:<input type="text" name="name"/>
+    <input type="submit" value="Submit"/>
+    
+    </form>
+  </body>
+</html>
